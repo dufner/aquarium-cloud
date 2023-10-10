@@ -33,16 +33,16 @@ public class DesignAquariumControllerTest {
   @BeforeEach
   public void setup() {
     componentOFAquariums = Arrays.asList(
-      new ComponentOFAquarium("FLTO", "Flour Tortilla", Type.WRAP),
-      new ComponentOFAquarium("COTO", "Corn Tortilla", Type.WRAP),
-      new ComponentOFAquarium("GRBF", "Ground Beef", Type.PROTEIN),
-      new ComponentOFAquarium("CARN", "Carnitas", Type.PROTEIN),
-      new ComponentOFAquarium("TMTO", "Diced Tomatoes", Type.VEGGIES),
-      new ComponentOFAquarium("LETC", "Lettuce", Type.VEGGIES),
-      new ComponentOFAquarium("CHED", "Cheddar", Type.CHEESE),
-      new ComponentOFAquarium("JACK", "Monterrey Jack", Type.CHEESE),
-      new ComponentOFAquarium("SLSA", "Salsa", Type.SAUCE),
-      new ComponentOFAquarium("SRCR", "Sour Cream", Type.SAUCE)
+            new ComponentOFAquarium("CFT", "coldwater freshwater tank", Type.TANK),
+            new ComponentOFAquarium("TFT", "tropical freshwater tank", Type.TANK),
+            new ComponentOFAquarium("GF", "GoldFish", Type.FISH),
+            new ComponentOFAquarium("KOI", "KOI", Type.FISH),
+            new ComponentOFAquarium("COONTAIL", "Coontail", Type.AQUAPLANT),
+            new ComponentOFAquarium("DW", "Duckweeds", Type.AQUAPLANT),
+            new ComponentOFAquarium("SAND", "White sand", Type.AQUASOIL),
+            new ComponentOFAquarium("ROCKSSMALL", "Small rocks black", Type.AQUASOIL),
+            new ComponentOFAquarium("AD", "Artificial Driftwood", Type.DECOR),
+            new ComponentOFAquarium("ND", "Natural Driftwood", Type.DECOR)
     );
 
   }
