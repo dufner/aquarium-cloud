@@ -35,8 +35,8 @@ public class DesignAquariumController {
     @ModelAttribute
 public void addIngredientsToModel(Model model) {
 	List<ComponentOFAquarium> componentOFAquariums = Arrays.asList(
-	  new ComponentOFAquarium("CFT", "coldwater freshwater tank", Type.TANK),
-	  new ComponentOFAquarium("TFT", "tropical freshwater tank", Type.TANK),
+	  new ComponentOFAquarium("CFT", "Cold water freshwater tank", Type.TANK),
+	  new ComponentOFAquarium("TFT", "Tropical freshwater tank", Type.TANK),
 	  new ComponentOFAquarium("GF", "GoldFish", Type.FISH),
 	  new ComponentOFAquarium("KOI", "KOI", Type.FISH),
 	  new ComponentOFAquarium("COONTAIL", "Coontail", Type.AQUAPLANT),
@@ -69,10 +69,10 @@ public void addIngredientsToModel(Model model) {
     return "design";
   }
 
-  @ModelAttribute(name = "message")
-    public String message (){
-    return "fuck!!!!";
-    }
+//  @ModelAttribute(name = "message")
+//    public String message (){
+//    return "fuck!!!!";
+//    }
 /*
   @PostMapping
   public String processTaco(Taco taco,

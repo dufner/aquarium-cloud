@@ -1,4 +1,4 @@
 spring:
   datasource:
-    name: tacocloud
+    name: aquariumcloud
     generate-unique-name: false
