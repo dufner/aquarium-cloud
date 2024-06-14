@@ -2,7 +2,7 @@ spring:
   thymeleaf:
     cache: false
   datasource:
-    name: aquariumcloud
+    name: aquarium-cloud
     generate-unique-name: false
 server:
   port: 44095
