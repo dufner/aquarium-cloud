@@ -43,7 +43,7 @@
         </div>
 
         <div class="component-group" id="fish">
-            <h3>Pick your protein:</h3>
+            <h3>Pick your fish:</h3>
             <div th:each="componentOFAquarium : ${fish}">
                 <input th:field="*{componentOFAquariums}" type="checkbox"
                        th:value="${componentOFAquarium.id}"/>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="component-group" id="aquaplant">
-            <h3>Choose your cheese:</h3>
+            <h3>Choose your plants:</h3>
             <div th:each="componentOFAquarium: ${aquaplant}">
                 <input th:field="*{componentOFAquariums}" type="checkbox"
                        th:value="${componentOFAquarium.id}"/>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="component-group" id="aquasoil">
-            <h3>Determine your veggies:</h3>
+            <h3>Determine your soil:</h3>
             <div th:each="componentOFAquarium : ${aquasoil}">
                 <input th:field="*{componentOFAquariums}" type="checkbox"
                        th:value="${componentOFAquarium.id}"/>
@@ -71,7 +71,7 @@
         </div>
 
         <div class="component-group" id="decor">
-            <h3>Select your sauce:</h3>
+            <h3>Select your decor:</h3>
             <div th:each="componentOFAquarium : ${decor}">
                 <input th:field="*{componentOFAquariums}" type="checkbox"
                        th:value="${componentOFAquarium.id}"/>
