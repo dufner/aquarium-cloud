@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.Arrays;
 import java.util.List;
 
+import aquariums.ComponentOFAquarium;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,8 +19,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import tacos.ComponentOFAquarium.Type;
-import tacos.web.DesignAquariumController;
+import aquariums.ComponentOFAquarium.Type;
+import aquariums.web.DesignAquariumController;
 
 @ExtendWith(SpringExtension.class) // <1>
 @WebMvcTest(DesignAquariumController.class)
