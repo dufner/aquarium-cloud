@@ -1,12 +1,11 @@
 package aquariums.web;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import aquariums.ComponentOFAquarium;
-import aquariums.data.ComponentOfAquariumRepository;
+import aquariums.Component;
+import aquariums.data.ComponentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import lombok.extern.slf4j.Slf4j;
 import aquariums.Aquarium;
 import aquariums.AquariumOrder;
-import aquariums.ComponentOFAquarium;
-import aquariums.ComponentOFAquarium.Type;
+import aquariums.Component.Type;
 import javax.validation.Valid;
 import org.springframework.validation.Errors;
 
@@ -30,24 +28,24 @@ import org.springframework.validation.Errors;
 @SessionAttributes("aquariumOrder")
 public class DesignAquariumController {
 
-    private final ComponentOfAquariumRepository componentOfAquariumRepository;
-@Autowired
-    public DesignAquariumController(ComponentOfAquariumRepository componentOfAquariumRepository) {
-        this.componentOfAquariumRepository = componentOfAquariumRepository;
+    private final ComponentRepository componentRepository;
+    @Autowired
+    public DesignAquariumController(ComponentRepository componentRepository) {
+        this.componentRepository = componentRepository;
     }
 
 
     @ModelAttribute
-public void addIngredientsToModel(Model model) {
-        List<ComponentOFAquarium> componentOFAquariums = new ArrayList<>();
-        componentOfAquariumRepository.findAll().forEach(i -> componentOFAquariums.add(i));
+    public void addComponentsToModel(Model model) {
+        List<Component> components = new ArrayList<>();
+        componentRepository.findAll().forEach(i -> components.add(i));
 
-      Type[] types = ComponentOFAquarium.Type.values();
+      Type[] types = Component.Type.values();
         for (Type type : types) {
             model.addAttribute(type.toString().toLowerCase(),
-                    filterByType(componentOFAquariums, type));
+                    filterByType(components, type));
         }
-  }
+     }
 
   @ModelAttribute(name = "aquariumOrder")
   public AquariumOrder order() {
@@ -94,9 +92,9 @@ public void addIngredientsToModel(Model model) {
     return "redirect:/orders/current";
   }
 
-  private Iterable<ComponentOFAquarium> filterByType(
-          List<ComponentOFAquarium> componentOFAquariums, ComponentOFAquarium.Type type) {
-    return componentOFAquariums
+  private Iterable<Component> filterByType(
+          List<Component> components, Component.Type type) {
+    return components
               .stream()
               .filter(x -> x.getType().equals(type))
               .collect(Collectors.toList());

@@ -15,15 +15,19 @@ public class Aquarium {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
+  @NotNull
+  @Size(min=5, message="Name must be at least 5 characters long")
+  private String name;
+
   private Date createdAt= new Date();
 
 
 
   @Size(min=1, message="You must choose at least 1 ingredient")
   @ManyToMany()
-  private List<ComponentOFAquarium> componentsOFAquariums = new ArrayList<>();
-  public void addComponentOFAquarium(ComponentOFAquarium componentOFAquariumt) {
-    this.componentsOFAquariums.add(componentOFAquariumt);
+  private List<Component> components = new ArrayList<>();
+  public void addComponent(Component component) {
+    this.components.add(component);
   }
 
 }

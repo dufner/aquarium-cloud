@@ -1,8 +1,5 @@
 package aquariums;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -47,7 +44,7 @@ public class AquariumOrder {
 
   @Digits(integer=3, fraction=0, message="Invalid CVV")
   private String ccCVV;
-
+  @OneToMany(cascade = CascadeType.ALL)
   private List<Aquarium> aquariums = new ArrayList<>();
 
   public void addAquarium(Aquarium aquarium) {

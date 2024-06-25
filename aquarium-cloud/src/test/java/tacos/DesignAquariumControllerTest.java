@@ -9,7 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.Arrays;
 import java.util.List;
 
-import aquariums.ComponentOFAquarium;
+import aquariums.Component;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,7 +19,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import aquariums.ComponentOFAquarium.Type;
+import aquariums.Component.Type;
 import aquariums.web.DesignAquariumController;
 
 @ExtendWith(SpringExtension.class) // <1>
@@ -29,21 +29,21 @@ public class DesignAquariumControllerTest {
   @Autowired
   private MockMvc mockMvc;
 
-  private List<ComponentOFAquarium> componentOFAquariums;
+  private List<Component> componentOFAquariums;
 
   @BeforeEach
   public void setup() {
     componentOFAquariums = Arrays.asList(
-            new ComponentOFAquarium("CFT", "coldwater freshwater tank", Type.TANK),
-            new ComponentOFAquarium("TFT", "tropical freshwater tank", Type.TANK),
-            new ComponentOFAquarium("GF", "GoldFish", Type.FISH),
-            new ComponentOFAquarium("KOI", "KOI", Type.FISH),
-            new ComponentOFAquarium("COONTAIL", "Coontail", Type.AQUAPLANT),
-            new ComponentOFAquarium("DW", "Duckweeds", Type.AQUAPLANT),
-            new ComponentOFAquarium("SAND", "White sand", Type.AQUASOIL),
-            new ComponentOFAquarium("ROCKSSMALL", "Small rocks black", Type.AQUASOIL),
-            new ComponentOFAquarium("AD", "Artificial Driftwood", Type.DECOR),
-            new ComponentOFAquarium("ND", "Natural Driftwood", Type.DECOR)
+            new Component("CFT", "coldwater freshwater tank", Type.TANK),
+            new Component("TFT", "tropical freshwater tank", Type.TANK),
+            new Component("GF", "GoldFish", Type.FISH),
+            new Component("KOI", "KOI", Type.FISH),
+            new Component("COONTAIL", "Coontail", Type.AQUAPLANT),
+            new Component("DW", "Duckweeds", Type.AQUAPLANT),
+            new Component("SAND", "White sand", Type.AQUASOIL),
+            new Component("ROCKSSMALL", "Small rocks black", Type.AQUASOIL),
+            new Component("AD", "Artificial Driftwood", Type.DECOR),
+            new Component("ND", "Natural Driftwood", Type.DECOR)
     );
 
   }

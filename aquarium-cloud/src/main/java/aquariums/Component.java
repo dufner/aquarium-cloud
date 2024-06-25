@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)
-public class ComponentOFAquarium {
+public class Component {
   @Id
   private  String id;
   private  String name;

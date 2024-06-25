@@ -1,5 +1,4 @@
-<!-- tag::all[] -->
-<!-- tag::head[] -->
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
@@ -11,71 +10,61 @@
 <body>
 <h1>Design your aquarium!</h1>
 <img th:src="@{/images/AquariumCloud.jpg}"/>
-
-
-
-
-
-<!-- tag::formTag[] -->
 <form method="POST" th:object="${aquarium}">
 
-
-    <!-- end::all[] -->
-
     <span class="validationError"
-          th:if="${#fields.hasErrors('componentOFAquariums')}"
-          th:errors="*{componentOFAquariums}">ComponentOFAquarium Error</span>
+          th:if="${#fields.hasErrors('components')}"
+          th:errors="*{components}">component Error</span>
 
     <!-- tag::all[] -->
     <div class="grid">
-        <!-- end::formTag[] -->
-        <!-- end::head[] -->
+
         <div class="component-group" id="tank">
             <!-- tag::designateWrap[] -->
             <h3>Design your tank:</h3>
-            <!--          <p th:text="${message}">placeholder message</p>-->
 
-            <select th:field="*{componentOFAquariums}">
-                <option th:each="componentOFAquarium : ${tank}" th:value="${componentOFAquarium.id}">
-                      <span th:text="${componentOFAquarium.name}">Component Of Aquarium </span>
+
+            <select th:field="*{components}">
+                <option th:each="component : ${tank}" th:value="${component.id}">
+                      <span th:text="${component.name}">Component Of Aquarium </span>
                 </option>
             </select>
         </div>
 
         <div class="component-group" id="fish">
             <h3>Pick your fish:</h3>
-            <div th:each="componentOFAquarium : ${fish}">
-                <input th:field="*{componentOFAquariums}" type="checkbox"
-                       th:value="${componentOFAquarium.id}"/>
-                <span th:text="${componentOFAquarium.name}">Component Of Aquarium</span>
+            <div th:each="component : ${fish}">
+                <input th:field="*{components}" type="checkbox"
+                       th:value="${component.id}"/>
+                <span th:text="${component.name}">Component Of Aquarium</span>
                 <br/>
             </div>
         </div>
 
         <div class="component-group" id="aquaplant">
             <h3>Choose your plants:</h3>
-            <div th:each="componentOFAquarium: ${aquaplant}">
-                <input th:field="*{componentOFAquariums}" type="checkbox"
-                       th:value="${componentOFAquarium.id}"/>
-                <span th:text="${componentOFAquarium.name}">Component Of Aquarium</span><br/>
+            <div th:each="component: ${aquaplant}">
+                <input th:field="*{components}" type="checkbox"
+                       th:value="${component.id}"/>
+                <span th:text="${component.name}">Component Of Aquarium</span><br/>
             </div>
         </div>
 
         <div class="component-group" id="aquasoil">
             <h3>Determine your soil:</h3>
-            <div th:each="componentOFAquarium : ${aquasoil}">
-                <input th:field="*{componentOFAquariums}" type="checkbox"
-                       th:value="${componentOFAquarium.id}"/>
-                <span th:text="${componentOFAquarium.name}">Component Of Aquarium</span><br/>
+            <div th:each="component : ${aquasoil}">
+                <input th:field="*{components}" type="checkbox"
+                       th:value="${component.id}"/>
+                <span th:text="${component.name}">Component Of Aquarium</span><br/>
             </div>
         </div>
 
         <div class="component-group" id="decor">
             <h3>Select your decor:</h3>
-            <div th:each="componentOFAquarium : ${decor}">
-                <input th:field="*{componentOFAquariums}" type="checkbox"
-                       th:value="${componentOFAquarium.id}"/>
-                <span th:text="${componentOFAquarium.name}">Component Of Aquarium</span><br/>
+            <div th:each="component : ${decor}">
+                <input th:field="*{components}" type="checkbox"
+                       th:value="${component.id}"/>
+                <span th:text="${component.name}">Component Of Aquarium</span><br/>
             </div>
         </div>
     </div>
@@ -96,7 +85,6 @@
     </div>
     <!-- tag::closeFormTag[] -->
 </form>
-<!-- end::closeFormTag[] -->
 </body>
 </html>
-<!-- end::all[] -->
+
